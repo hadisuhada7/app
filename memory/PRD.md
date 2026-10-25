@@ -27,6 +27,7 @@
 - The other 5 services (website-custom, portal-berita, web-application, mobile-app, managed-hosting-server) still use the basic template.
 - Artikel (/artikel), Kontak (/kontak) and Member Area (/member) rebuilt to match the user's screenshots + original content (2026-10-25). Kontak: brief form opens WhatsApp with a pre-filled message (same format as original), Google Maps embed. Member: "Segera Hadir" page with live countdown to 1 Nov 2026 00:00 WIB.
 - Article detail pages (/artikel/:slug) rebuilt with full original text: centered hero (category, title, lead, author + 1 Oktober 2026), visual banner, sections, related articles (2026-10-25).
+- Website Custom, Portal Berita, Web Application pages rebuilt from originals (data in src/data/services2.js, block-based rendering in ServicePage.jsx, web-app specific sections in pages/AppSections.jsx) (2026-10-25). Remaining basic: mobile-app, managed-hosting-server.
 
 ## Backlog
 - P0: Match Layanan, Artikel, Kontak, Login Member to their screenshots (phase 2).

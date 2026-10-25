@@ -6,6 +6,7 @@ import { Clients } from "@/pages/Home";
 import { FaqBlock } from "@/pages/HomeFaq";
 import { TECH, SUPPORT_ITEMS } from "@/data/services";
 import { CommerceSections, MemberSection } from "@/pages/CommerceSections";
+import { AppMock, AppAbout, Workflow, Roles, Security } from "@/pages/AppSections";
 import PORTFOLIO from "@/data/portfolio.json";
 
 const Head = ({ eyebrow, title, text, center }) => (
@@ -69,12 +70,12 @@ const Hero = ({ d }) => (
           <p className="hero-lead">{d.text}</p>
           <div className="hero-buttons">
             <Btn to={d.wa} testid="service-hero-consult">{d.ctaLabel}</Btn>
-            <Btn to="/portofolio" variant="link-plain" testid="service-hero-portfolio">Lihat Portofolio</Btn>
+            <Btn to={d.secondary ? `${window.location.pathname}${d.secondary.to}` : "/portofolio"} variant="link-plain" testid="service-hero-secondary">{d.secondary?.label ?? "Lihat Portofolio"}</Btn>
           </div>
           <div className="hero-points">{d.badges.map((b) => <span key={b}><Check size={15} /> {b}</span>)}</div>
         </Reveal>
       </div>
-      {d.shopVisual ? <ShopMock /> : <VisualMock v={d.visual} />}
+      {d.appVisual ? <AppMock /> : d.shopVisual ? <ShopMock /> : <VisualMock v={d.visual} />}
     </div>
   </section>
 );
@@ -82,7 +83,7 @@ const Hero = ({ d }) => (
 const About = ({ a }) => (
   <section className="section" data-testid="service-about">
     <div className="container svc-about">
-      <Reveal><Eyebrow>{a.eyebrow}</Eyebrow><h2>{a.title}</h2></Reveal>
+      <Reveal><Eyebrow>{a.eyebrow}</Eyebrow><h2>{a.title}</h2>{a.lead && <p className="muted-sm">{a.lead}</p>}</Reveal>
       <Reveal delay={0.1}>
         <p className="svc-about-text">{a.text}</p>
         <div className="svc-points">
@@ -191,7 +192,7 @@ const Process = ({ pc }) => (
   <section className="section soft svc-process" data-testid="service-process">
     <div className="container">
       <Head {...pc} />
-      <div className="steps six">
+      <div className="steps six" style={pc.cols ? { gridTemplateColumns: `repeat(${pc.cols}, minmax(0, 1fr))` } : undefined}>
         {pc.steps.map(([t, p], i) => (
           <Reveal className="step" key={t} delay={i * 0.07}>
             <span className="step-number">{String(i + 1).padStart(2, "0")}</span>
@@ -208,20 +209,84 @@ const Support = ({ s }) => (
     <div className="container">
       <Reveal className="support-panel">
         <div>
-          <span className="eyebrow light">Setelah Website Aktif</span>
+          <span className="eyebrow light">{s.eyebrow ?? "Setelah Website Aktif"}</span>
           <h2>{s.title}</h2>
           <p>{s.text}</p>
         </div>
         <div className="support-list">
-          {SUPPORT_ITEMS.map((it) => <div key={it.title}><span><Icon name={it.icon} size={15} /></span>{it.title}</div>)}
+          {(s.items ? s.items.map(([icon, title]) => ({ icon, title })) : SUPPORT_ITEMS).map((it) => <div key={it.title}><span><Icon name={it.icon} size={15} /></span>{it.title}</div>)}
         </div>
       </Reveal>
     </div>
   </section>
 );
 
+const Grid = ({ b }) => (
+  <section className={`section ${b.soft ? "soft" : ""}`} data-testid="service-grid">
+    <div className="container">
+      <Head eyebrow={b.eyebrow} title={b.title} text={b.text} center={b.center} />
+      <div className={b.cols === 4 ? "grid-4" : b.plain ? "grid-3 plain-grid" : "grid-3"}>
+        {b.items.map(([icon, t, p], i) => b.plain ? (
+          <Reveal className="plain-item" key={t} delay={(i % 3) * 0.07}><span className="icon-box"><Icon name={icon} size={17} /></span><h3>{t}</h3><p>{p}</p></Reveal>
+        ) : (
+          <FeatureCard key={t} icon={icon} title={b.numbered ? `${String(i + 1).padStart(2, "0")} · ${t}` : t} text={p} index={i} />
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const Estimate = ({ b, waLink }) => (
+  <section className="section soft" id="estimasi" data-testid="service-estimate">
+    <div className="container">
+      <Head center eyebrow={b.eyebrow} title={b.title} text={b.text} />
+      <Reveal className="estimate-card">
+        <div>
+          <span className="portfolio-label">Dasar Perhitungan</span>
+          <h3>{b.cardTitle}</h3>
+          <p>{b.cardText}</p>
+          <Btn to={waLink} testid="estimate-cta">{b.button}</Btn>
+        </div>
+        <div className="estimate-factors">{b.factors.map((f) => <span key={f}><Check size={13} /> {f}</span>)}</div>
+      </Reveal>
+      <p className="fine-note center">Estimasi final diberikan setelah requirement dan ruang lingkup pekerjaan disepakati.</p>
+    </div>
+  </section>
+);
+
+const renderBlock = (b, i, d) => {
+  switch (b.type) {
+    case "about": return <About key={i} a={b} />;
+    case "grid": return <Grid key={i} b={b} />;
+    case "flow": return <Flow key={i} f={b} />;
+    case "pricing": return <Pricing key={i} pr={b} />;
+    case "estimate": return <Estimate key={i} b={b} waLink={d.wa} />;
+    case "tech": return <Tech key={i} />;
+    case "process": return <Process key={i} pc={b} />;
+    case "support": return <Support key={i} s={b} />;
+    case "faq": return <FaqBlock key={i} soft eyebrow="Pertanyaan Umum" title={b.title} text={b.text} items={b.items} testid="service-faq" />;
+    case "appAbout": return <AppAbout key={i} />;
+    case "workflow": return <Workflow key={i} b={b} />;
+    case "roles": return <Roles key={i} />;
+    case "security": return <Security key={i} />;
+    default: return null;
+  }
+};
+
 export default function ServicePage({ d }) {
   useSeo(d.seo, d.text);
+  if (d.blocks) {
+    return (
+      <>
+        <Hero d={d} />
+        <Clients />
+        {d.blocks.map((b, i) => renderBlock(b, i, d))}
+        <CtaBlock eyebrow={d.cta.eyebrow} title={d.cta.title} text={d.cta.text} testid="service-cta">
+          <Btn to={d.wa} variant="white" testid="service-cta-consult">{d.cta.label}</Btn>
+        </CtaBlock>
+      </>
+    );
+  }
   return (
     <>
       <Hero d={d} />

@@ -3,7 +3,10 @@ import { useSeo } from "@/components/Layout";
 import { Reveal, Eyebrow, Btn, IconBox, CtaBlock } from "@/components/Common";
 import { SERVICES, WA, wa } from "@/data/site";
 import ServicePage from "@/pages/ServicePage";
-import { SERVICE_DETAILS } from "@/data/services";
+import { SERVICE_DETAILS as BASE_DETAILS } from "@/data/services";
+import { EXTRA_SERVICES } from "@/data/services2";
+
+const SERVICE_DETAILS = { ...BASE_DETAILS, ...EXTRA_SERVICES };
 
 const SimpleHero = ({ eyebrow, title, text, children, testid }) => (
   <section className="page-hero simple" data-testid={testid}>

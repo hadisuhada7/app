@@ -72,12 +72,12 @@ export const Workflow = ({ b }) => (
   <section className="section" data-testid="service-workflow">
     <div className="container">
       <Reveal className="section-heading center"><Eyebrow>{b.eyebrow}</Eyebrow><h2>{b.title}</h2><p>{b.text}</p></Reveal>
-      <div className="wf-row">
+      <div className="wf-row" style={{ "--wf": b.items.length }}>
         {b.items.map(([t, s], i) => (
           <Reveal className="wf-item" key={t} delay={i * 0.06}>
             <span>{String(i + 1).padStart(2, "0")}</span>
             <strong>{t}</strong><small>{s}</small>
-            {i < b.items.length - 1 && <ArrowRight size={14} className="wf-arrow" />}
+            {i < b.items.length - 1 && !b.noArrow && <ArrowRight size={14} className="wf-arrow" />}
           </Reveal>
         ))}
       </div>

@@ -7,6 +7,7 @@ import { FaqBlock } from "@/pages/HomeFaq";
 import { TECH, SUPPORT_ITEMS } from "@/data/services";
 import { CommerceSections, MemberSection } from "@/pages/CommerceSections";
 import { AppMock, AppAbout, Workflow, Roles, Security } from "@/pages/AppSections";
+import { PhoneMock, ServerMock, Split, Panel, Options } from "@/pages/InfraSections";
 import PORTFOLIO from "@/data/portfolio.json";
 
 const Head = ({ eyebrow, title, text, center }) => (
@@ -75,7 +76,7 @@ const Hero = ({ d }) => (
           <div className="hero-points">{d.badges.map((b) => <span key={b}><Check size={15} /> {b}</span>)}</div>
         </Reveal>
       </div>
-      {d.appVisual ? <AppMock /> : d.shopVisual ? <ShopMock /> : <VisualMock v={d.visual} />}
+      {d.phoneVisual ? <PhoneMock /> : d.serverVisual ? <ServerMock /> : d.appVisual ? <AppMock /> : d.shopVisual ? <ShopMock /> : <VisualMock v={d.visual} />}
     </div>
   </section>
 );
@@ -269,6 +270,9 @@ const renderBlock = (b, i, d) => {
     case "workflow": return <Workflow key={i} b={b} />;
     case "roles": return <Roles key={i} />;
     case "security": return <Security key={i} />;
+    case "split": return <Split key={i} b={b} />;
+    case "panel": return <Panel key={i} b={b} />;
+    case "options": return <Options key={i} b={b} />;
     default: return null;
   }
 };

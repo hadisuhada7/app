@@ -5,8 +5,9 @@ import { SERVICES, WA, wa } from "@/data/site";
 import ServicePage from "@/pages/ServicePage";
 import { SERVICE_DETAILS as BASE_DETAILS } from "@/data/services";
 import { EXTRA_SERVICES } from "@/data/services2";
+import { LAST_SERVICES } from "@/data/services3";
 
-const SERVICE_DETAILS = { ...BASE_DETAILS, ...EXTRA_SERVICES };
+const SERVICE_DETAILS = { ...BASE_DETAILS, ...EXTRA_SERVICES, ...LAST_SERVICES };
 
 const SimpleHero = ({ eyebrow, title, text, children, testid }) => (
   <section className="page-hero simple" data-testid={testid}>

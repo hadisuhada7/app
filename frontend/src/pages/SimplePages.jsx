@@ -1,8 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { useSeo } from "@/components/Layout";
-import { Reveal, Eyebrow, Btn, BtnLink, IconBox, CtaBlock, Icon } from "@/components/Common";
-import { SERVICES, ARTICLES, WA, CONTACT, wa } from "@/data/site";
-import { ArticleCard } from "@/pages/Home";
+import { Reveal, Eyebrow, Btn, BtnLink, IconBox, CtaBlock } from "@/components/Common";
+import { SERVICES, ARTICLES, WA, wa } from "@/data/site";
 import ServicePage from "@/pages/ServicePage";
 import { SERVICE_DETAILS } from "@/data/services";
 
@@ -68,17 +67,6 @@ const BasicService = ({ slug }) => {
   );
 };
 
-export const ArticlesPage = () => {
-  useSeo("Artikel & Panduan — Green Website Indonesia", "Panduan singkat untuk merencanakan, menyiapkan, dan mengelola website bisnis Anda.");
-  return (
-    <>
-      <SimpleHero eyebrow="Artikel & Panduan" title={<>Bekal untuk Mengambil Keputusan <em>Digital yang Lebih Tepat.</em></>} text="Panduan singkat untuk merencanakan, menyiapkan, dan mengelola website bisnis Anda." testid="articles-hero" />
-      <section className="section soft"><div className="container grid-3">{ARTICLES.map((a, i) => <ArticleCard key={a.slug} a={a} i={i} />)}</div></section>
-      <ClosingCta />
-    </>
-  );
-};
-
 export const ArticleDetail = () => {
   const { slug } = useParams();
   const a = ARTICLES.find((x) => x.slug === slug);
@@ -95,54 +83,6 @@ export const ArticleDetail = () => {
       </section>
       <ClosingCta />
     </>
-  );
-};
-
-export const ContactPage = () => {
-  useSeo("Kontak — Green Website Indonesia", "Hubungi PT Green Website Indonesia melalui WhatsApp, email, atau kunjungi kantor kami di Cirebon dan Jakarta.");
-  const items = [
-    { icon: "chat", title: "WhatsApp", text: CONTACT.phone, href: WA.chat },
-    { icon: "book", title: "Email", text: CONTACT.email, href: `mailto:${CONTACT.email}` },
-    ...CONTACT.offices.map((o) => ({ icon: "pin", title: o.title, text: o.address })),
-  ];
-  return (
-    <>
-      <SimpleHero eyebrow="Kontak" title={<>Mari Mulai dari <em>Percakapan.</em></>} text="Ceritakan kebutuhan bisnis, perusahaan, atau lembaga Anda. Tim kami siap membantu memetakan langkah yang relevan sebelum proyek dimulai." testid="contact-hero">
-        <div className="hero-buttons"><Btn to={WA.konsultasi} testid="contact-wa">Chat via WhatsApp</Btn></div>
-      </SimpleHero>
-      <section className="section soft">
-        <div className="container grid-4">
-          {items.map((it, i) => (
-            <Reveal className="card feature-card" key={it.title} delay={i * 0.06} data-testid={`contact-card-${i}`}>
-              <IconBox name={it.icon} />
-              <h3>{it.title}</h3>
-              {it.href ? <a className="contact-link" href={it.href} target={it.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">{it.text}</a> : <p>{it.text}</p>}
-            </Reveal>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-};
-
-export const MemberPage = () => {
-  useSeo("Login Member — Green Website Indonesia", "Member Area Green Website Indonesia untuk mengakses layanan hosting, domain, dan email bisnis.");
-  return (
-    <section className="page-hero simple member" data-testid="member-page">
-      <div className="container member-wrap">
-        <Reveal className="card member-card">
-          <IconBox name="user" />
-          <h1 className="member-title">Login Member</h1>
-          <p>Akses layanan hosting, domain, dan email bisnis melalui Member Area.</p>
-          <form onSubmit={(e) => e.preventDefault()} className="member-form">
-            <label>Email<input type="email" placeholder="nama@bisnis.com" data-testid="member-email" /></label>
-            <label>Kata sandi<input type="password" placeholder="••••••••" data-testid="member-password" /></label>
-            <button type="submit" className="btn primary full" disabled data-testid="member-submit">Masuk</button>
-          </form>
-          <p className="fine-note"><Icon name="shield" size={13} /> Member Area sedang disiapkan. Untuk bantuan, hubungi <a href={WA.afterSales} target="_blank" rel="noopener noreferrer">Tim After Sales</a>.</p>
-        </Reveal>
-      </div>
-    </section>
   );
 };
 

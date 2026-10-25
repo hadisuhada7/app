@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Lenis from "lenis";
-import { ChevronDown, Menu, X, Phone, Mail, MapPin, LogIn } from "lucide-react";
+import { ChevronDown, Menu, X, Phone, Mail, MapPin, UserRound, ArrowUpRight } from "lucide-react";
 import { SERVICES, CONTACT, WA } from "@/data/site";
 import { Icon } from "@/components/Common";
 
@@ -75,7 +75,7 @@ const Header = () => {
             )
           )}
         </nav>
-        <Link to="/member" className="btn primary header-cta" data-testid="header-login-member"><LogIn size={15} /> Login Member</Link>
+        <Link to="/member" className="btn primary header-cta" data-testid="header-login-member"><UserRound size={15} /> Login Member <ArrowUpRight size={14} /></Link>
         <button type="button" className="burger" aria-label="Buka menu" onClick={() => setDrawer(true)} data-testid="mobile-menu-open"><Menu size={22} /></button>
       </div>
       {drawer && createPortal(
@@ -89,7 +89,7 @@ const Header = () => {
             <p className="drawer-sub">Layanan</p>
             {SERVICES.map((s) => <Link key={s.slug} to={`/layanan/${s.slug}`} className="drawer-service">{s.title}</Link>)}
           </div>
-          <Link to="/member" className="btn primary full" data-testid="drawer-login-member"><LogIn size={15} /> Login Member</Link>
+          <Link to="/member" className="btn primary full" data-testid="drawer-login-member"><UserRound size={15} /> Login Member</Link>
         </div>,
         document.body
       )}

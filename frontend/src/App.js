@@ -4,7 +4,10 @@ import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Portfolio from "@/pages/Portfolio";
-import { ServiceDetail, ArticlesPage, ArticleDetail, ContactPage, MemberPage, LegalPage } from "@/pages/SimplePages";
+import { ServiceDetail, ArticleDetail, LegalPage } from "@/pages/SimplePages";
+import ArticlesPage from "@/pages/ArticlesPage";
+import ContactPage from "@/pages/ContactPage";
+import MemberPage from "@/pages/MemberPage";
 
 function App() {
   return (

@@ -17,6 +17,9 @@ export const CONTACT = {
   ],
 };
 
+export const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Menara%20Cakrawala&query_place_id=ChIJve0iVi_0aS4ROBHLNryxvhA";
+export const MAPS_EMBED = "https://www.google.com/maps?q=Menara%20Cakrawala%2C%20Jl.%20M.H.%20Thamrin%20No.%209%2C%20Jakarta%20Pusat%2C%20DKI%20Jakarta%2010340&z=17&output=embed";
+
 export const SERVICES = [
   {
     slug: "company-profile", icon: "building", title: "Website Company Profile", short: "Profil bisnis & perusahaan",
@@ -125,6 +128,8 @@ export const ABOUT_SUPPORT = [
 export const ARTICLES = [
   {
     slug: "memilih-jenis-website", kicker: "PANDUAN WEBSITE", tag: "Jenis Website", title: "Memilih Jenis Website Sesuai Kebutuhan Bisnis", tone: "green",
+    cat: "Perencanaan Website", read: "7 menit baca", icon: "globe", mockKicker: "PERENCANAAN WEBSITE",
+    excerpt: "Jenis website sebaiknya ditentukan dari tujuan bisnis, informasi yang perlu ditampilkan, dan tindakan yang diharapkan dari pengunjung.",
     body: [
       "Setiap bisnis memiliki tujuan yang berbeda saat membangun kehadiran digital. Sebelum memulai, tentukan apa yang paling perlu disampaikan kepada pengunjung.",
       "Website company profile cocok untuk memperkenalkan perusahaan dan layanan. Landing page membantu satu penawaran atau kampanye tersampaikan dengan fokus. Toko online dibutuhkan saat produk perlu ditampilkan secara terorganisasi.",
@@ -133,6 +138,8 @@ export const ARTICLES = [
   },
   {
     slug: "persiapan-membuat-website", kicker: "PERSIAPAN WEBSITE", tag: "Materi Website", title: "Materi yang Perlu Disiapkan Sebelum Membuat Website", tone: "cream",
+    cat: "Persiapan Website", read: "6 menit baca", icon: "briefcase", mockKicker: "PERSIAPAN WEBSITE",
+    excerpt: "Materi yang rapi sejak awal membuat proses desain dan pengembangan website lebih terarah, cepat, dan sesuai identitas bisnis.",
     body: [
       "Materi yang lengkap membantu proses pengerjaan berjalan lebih lancar dan terarah.",
       "Siapkan logo, profil singkat bisnis, daftar layanan atau produk, informasi kontak, serta foto pendukung dengan kualitas yang baik.",
@@ -141,6 +148,8 @@ export const ARTICLES = [
   },
   {
     slug: "merawat-informasi-website", kicker: "SETELAH ONLINE", tag: "Informasi Website", title: "Merawat Informasi Website Setelah Peluncuran", tone: "mint",
+    cat: "Pengelolaan Website", read: "6 menit baca", icon: "check", mockKicker: "PENGELOLAAN WEBSITE",
+    excerpt: "Website yang sudah online tetap membutuhkan informasi yang akurat agar pengunjung tidak menerima layanan, alamat, harga, atau kontak yang sudah berubah.",
     body: [
       "Website yang aktif perlu informasi yang selalu relevan agar tetap dipercaya pengunjung.",
       "Periksa secara berkala informasi kontak, jam operasional, harga, dan layanan. Perbarui foto dan konten ketika ada perubahan pada bisnis Anda.",

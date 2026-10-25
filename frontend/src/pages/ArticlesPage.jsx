@@ -9,7 +9,7 @@ const TOPICS = [
   { icon: "check", title: "Pengelolaan Website", text: "Menjaga informasi, konten, dan kebutuhan pengembangan tetap sesuai setelah website diluncurkan." },
 ];
 
-const GuideCard = ({ a, i }) => (
+export const GuideCard = ({ a, i }) => (
   <Reveal className="card guide-card" delay={i * 0.08} data-testid={`guide-card-${a.slug}`}>
     <Link to={`/artikel/${a.slug}`} className={`guide-cover tone-${a.tone}`} aria-label={a.title}>
       <div className="guide-window">

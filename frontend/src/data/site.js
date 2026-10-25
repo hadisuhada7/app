@@ -130,30 +130,41 @@ export const ARTICLES = [
     slug: "memilih-jenis-website", kicker: "PANDUAN WEBSITE", tag: "Jenis Website", title: "Memilih Jenis Website Sesuai Kebutuhan Bisnis", tone: "green",
     cat: "Perencanaan Website", read: "7 menit baca", icon: "globe", mockKicker: "PERENCANAAN WEBSITE",
     excerpt: "Jenis website sebaiknya ditentukan dari tujuan bisnis, informasi yang perlu ditampilkan, dan tindakan yang diharapkan dari pengunjung.",
-    body: [
-      "Setiap bisnis memiliki tujuan yang berbeda saat membangun kehadiran digital. Sebelum memulai, tentukan apa yang paling perlu disampaikan kepada pengunjung.",
-      "Website company profile cocok untuk memperkenalkan perusahaan dan layanan. Landing page membantu satu penawaran atau kampanye tersampaikan dengan fokus. Toko online dibutuhkan saat produk perlu ditampilkan secara terorganisasi.",
-      "Diskusikan tujuan dan kebutuhan Anda bersama tim kami agar jenis website yang dipilih benar-benar relevan.",
+    lead: "Website yang tepat bukan ditentukan dari tampilan saja, tetapi dari tujuan bisnis, informasi yang perlu disampaikan, dan tindakan yang diharapkan dari pengunjung.",
+    visualTitle: "Jenis Website yang Tepat",
+    sections: [
+      ["Mulai dari Tujuan Utama Website", "Sebelum menentukan jenis website, tetapkan dahulu tujuan utamanya. Apakah website akan digunakan untuk memperkenalkan perusahaan, mengarahkan calon pelanggan ke satu penawaran, menjual produk, atau menjalankan fungsi bisnis tertentu. Tujuan ini akan menentukan struktur dan fitur yang benar-benar dibutuhkan."],
+      ["Company Profile untuk Membangun Kredibilitas", "Website company profile cocok untuk bisnis, perusahaan, dan lembaga yang membutuhkan profil resmi di internet. Halaman seperti Tentang Kami, Layanan, Portofolio, Legalitas, dan Kontak membantu pengunjung memahami siapa perusahaan Anda dan bagaimana cara menghubunginya."],
+      ["Landing Page untuk Tujuan yang Lebih Terarah", "Landing page biasanya digunakan ketika satu produk, jasa, atau kampanye membutuhkan komunikasi yang fokus. Kontennya dibuat lebih singkat dan terarah agar pengunjung memahami penawaran dan melakukan tindakan tertentu, seperti menghubungi WhatsApp atau mengisi formulir."],
+      ["Toko Online untuk Katalog dan Penjualan", "Jika bisnis memiliki banyak produk, website toko online memberikan struktur yang lebih sesuai. Produk dapat dikelompokkan, dilengkapi informasi, harga, variasi, serta alur pemesanan yang memudahkan calon pembeli menemukan produk yang dibutuhkan."],
+      ["Website Custom untuk Kebutuhan Khusus", "Ketika proses bisnis membutuhkan dashboard, akun pengguna, pengolahan data, integrasi, atau alur kerja tertentu, website custom lebih tepat dibanding memaksakan struktur website standar. Fitur dibuat berdasarkan kebutuhan operasional yang memang akan digunakan."],
     ],
   },
   {
     slug: "persiapan-membuat-website", kicker: "PERSIAPAN WEBSITE", tag: "Materi Website", title: "Materi yang Perlu Disiapkan Sebelum Membuat Website", tone: "cream",
     cat: "Persiapan Website", read: "6 menit baca", icon: "briefcase", mockKicker: "PERSIAPAN WEBSITE",
     excerpt: "Materi yang rapi sejak awal membuat proses desain dan pengembangan website lebih terarah, cepat, dan sesuai identitas bisnis.",
-    body: [
-      "Materi yang lengkap membantu proses pengerjaan berjalan lebih lancar dan terarah.",
-      "Siapkan logo, profil singkat bisnis, daftar layanan atau produk, informasi kontak, serta foto pendukung dengan kualitas yang baik.",
-      "Materi lain seperti legalitas, testimoni, atau portofolio dapat ditambahkan sesuai kebutuhan dan dibahas saat konsultasi.",
+    lead: "Materi yang rapi sejak awal membantu proses desain dan pengembangan berjalan lebih terarah serta menjaga hasil website tetap sesuai dengan identitas bisnis.",
+    visualTitle: "Materi Website yang Siap",
+    sections: [
+      ["Mulai dari Informasi Dasar Bisnis", "Siapkan nama usaha atau perusahaan, deskripsi singkat, bidang usaha, alamat, nomor kontak, email, jam operasional, serta informasi penting lain yang memang perlu diketahui pengunjung. Informasi dasar ini menjadi fondasi untuk menyusun halaman website."],
+      ["Logo dan Identitas Visual", "Logo dengan kualitas yang baik akan memudahkan proses penerapan identitas merek pada website. Jika sudah memiliki panduan warna, font, atau gaya visual, sertakan juga agar desain website tetap konsisten dengan materi promosi yang sudah digunakan."],
+      ["Deskripsi Layanan atau Produk", "Setiap layanan atau produk sebaiknya memiliki nama, penjelasan, manfaat, serta informasi pendukung yang relevan. Materi tidak harus panjang, tetapi harus cukup untuk membuat calon pelanggan memahami apa yang ditawarkan dan bagaimana proses mendapatkannya."],
+      ["Foto dan Dokumen Pendukung", "Foto kantor, tim, produk, proyek, sertifikat, legalitas, atau dokumentasi kegiatan dapat meningkatkan kredibilitas jika memang relevan. Pilih file yang jelas dan terbaru agar tampilan website tidak bergantung pada gambar yang kurang sesuai dengan kondisi bisnis."],
+      ["Tentukan Kontak dan Arah Tindakan", "Pastikan sejak awal sudah jelas ke mana pengunjung diarahkan setelah membaca informasi. Bisa melalui WhatsApp, formulir, email, checkout, atau halaman tertentu. Arah tindakan yang jelas membantu struktur website dibuat lebih efektif."],
     ],
   },
   {
     slug: "merawat-informasi-website", kicker: "SETELAH ONLINE", tag: "Informasi Website", title: "Merawat Informasi Website Setelah Peluncuran", tone: "mint",
     cat: "Pengelolaan Website", read: "6 menit baca", icon: "check", mockKicker: "PENGELOLAAN WEBSITE",
     excerpt: "Website yang sudah online tetap membutuhkan informasi yang akurat agar pengunjung tidak menerima layanan, alamat, harga, atau kontak yang sudah berubah.",
-    body: [
-      "Website yang aktif perlu informasi yang selalu relevan agar tetap dipercaya pengunjung.",
-      "Periksa secara berkala informasi kontak, jam operasional, harga, dan layanan. Perbarui foto dan konten ketika ada perubahan pada bisnis Anda.",
-      "Gunakan panduan pengelolaan website dan hubungi tim kami bila memerlukan bantuan teknis.",
+    lead: "Website yang sudah online tetap membutuhkan informasi yang akurat agar pengunjung tidak menerima layanan, alamat, harga, atau kontak yang sudah berubah.",
+    visualTitle: "Informasi Tetap Akurat",
+    sections: [
+      ["Website Online Tetap Perlu Diperbarui", "Setelah website diluncurkan, informasi di dalamnya menjadi bagian dari komunikasi resmi bisnis. Perubahan nomor telepon, alamat, jam layanan, produk, harga, atau struktur organisasi sebaiknya segera diikuti dengan pembaruan website agar pengunjung tidak menerima informasi yang sudah tidak berlaku."],
+      ["Periksa Informasi Secara Berkala", "Tidak semua website membutuhkan pembaruan setiap hari. Website company profile dapat diperiksa secara berkala, misalnya setiap satu sampai tiga bulan. Toko online dan portal berita biasanya membutuhkan ritme yang lebih sering. Yang terpenting adalah ada pihak yang bertanggung jawab terhadap akurasi informasi."],
+      ["Bedakan Pemeliharaan Teknis dan Konten", "Pemeliharaan teknis mencakup server, keamanan, backup, kompatibilitas, dan fungsi website. Sementara pembaruan konten mencakup teks, gambar, produk, artikel, serta informasi bisnis. Keduanya sama-sama penting, tetapi proses dan penanggung jawabnya bisa berbeda."],
+      ["Jaga Konsistensi di Semua Kanal", "Ketika informasi penting berubah, pastikan pembaruan tidak hanya dilakukan di website. Data seperti alamat, nomor kontak, nama perusahaan, dan jam operasional sebaiknya konsisten dengan Google Business Profile, media sosial, marketplace, dan kanal digital lain yang digunakan."],
     ],
   },
 ];

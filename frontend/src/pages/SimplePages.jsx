@@ -1,7 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { useSeo } from "@/components/Layout";
-import { Reveal, Eyebrow, Btn, BtnLink, IconBox, CtaBlock } from "@/components/Common";
-import { SERVICES, ARTICLES, WA, wa } from "@/data/site";
+import { Reveal, Eyebrow, Btn, IconBox, CtaBlock } from "@/components/Common";
+import { SERVICES, WA, wa } from "@/data/site";
 import ServicePage from "@/pages/ServicePage";
 import { SERVICE_DETAILS } from "@/data/services";
 
@@ -60,25 +60,6 @@ const BasicService = ({ slug }) => {
           <div className="chip-row">
             {SERVICES.filter((x) => x.slug !== slug).map((x) => <Link key={x.slug} className="chip" to={`/layanan/${x.slug}`}>{x.title}</Link>)}
           </div>
-        </div>
-      </section>
-      <ClosingCta />
-    </>
-  );
-};
-
-export const ArticleDetail = () => {
-  const { slug } = useParams();
-  const a = ARTICLES.find((x) => x.slug === slug);
-  useSeo(`${a?.title ?? "Artikel"} — Green Website Indonesia`, a?.body?.[0] ?? "");
-  if (!a) return <Navigate to="/artikel" replace />;
-  return (
-    <>
-      <SimpleHero eyebrow={`${a.kicker} · ${a.tag}`} title={a.title} testid="article-hero" />
-      <section className="section">
-        <div className="container prose" data-testid="article-body">
-          {a.body.map((p) => <p key={p}>{p}</p>)}
-          <BtnLink to="/artikel">Kembali ke Artikel</BtnLink>
         </div>
       </section>
       <ClosingCta />

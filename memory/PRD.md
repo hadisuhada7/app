@@ -22,6 +22,10 @@
 - Portofolio: hero + stats, approach, tabs (37 LP / 17 CP / 8 Toko Online / Portal Berita empty), solutions, CTA.
 - Temporary pages: /layanan/:slug (8), /artikel, /artikel/:slug, /kontak, /member (display only), /kebijakan-privasi, /syarat-ketentuan.
 
+## Implemented (2026-10-25, update)
+- Full service pages matching the original site: /layanan/company-profile, /layanan/landing-page, /layanan/toko-online (data in src/data/services.js; template in pages/ServicePage.jsx; toko online extras in pages/CommerceSections.jsx). Sections: hero + visual, clients, about, use cases, structure, pricing (CP promo valid until 31 Oct 2026), portfolio, technology & partners, process, after-sales panel, FAQ, CTA. Logos for tech/couriers/banks saved locally in /public/assets.
+- The other 5 services (website-custom, portal-berita, web-application, mobile-app, managed-hosting-server) still use the basic template.
+
 ## Backlog
 - P0: Match Layanan, Artikel, Kontak, Login Member to their screenshots (phase 2).
 - P1: "Pengalaman Klien" testimonial section; real member login.

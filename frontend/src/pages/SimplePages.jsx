@@ -3,6 +3,8 @@ import { useSeo } from "@/components/Layout";
 import { Reveal, Eyebrow, Btn, BtnLink, IconBox, CtaBlock, Icon } from "@/components/Common";
 import { SERVICES, ARTICLES, WA, CONTACT, wa } from "@/data/site";
 import { ArticleCard } from "@/pages/Home";
+import ServicePage from "@/pages/ServicePage";
+import { SERVICE_DETAILS } from "@/data/services";
 
 const SimpleHero = ({ eyebrow, title, text, children, testid }) => (
   <section className="page-hero simple" data-testid={testid}>
@@ -26,6 +28,11 @@ const ClosingCta = () => (
 
 export const ServiceDetail = () => {
   const { slug } = useParams();
+  const d = SERVICE_DETAILS[slug];
+  return d ? <ServicePage key={slug} d={d} /> : <BasicService key={slug} slug={slug} />;
+};
+
+const BasicService = ({ slug }) => {
   const s = SERVICES.find((x) => x.slug === slug);
   useSeo(`${s?.title ?? "Layanan"} — Green Website Indonesia`, s?.home ?? "");
   if (!s) return <Navigate to="/" replace />;

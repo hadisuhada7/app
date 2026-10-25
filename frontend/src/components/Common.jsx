@@ -4,6 +4,7 @@ import {
   Building2, LayoutTemplate, ShoppingCart, Code2, Globe, Layers, Smartphone, Server, Palette, ListChecks,
   MonitorSmartphone, MousePointerClick, ClipboardList, TrendingUp, UserRound, Wrench, MessageCircle, CloudUpload,
   BarChart3, BookOpen, Sparkles, ShieldCheck, Headset, Briefcase, ArrowRight, Check, MapPin, MessagesSquare,
+  Store, Users, HardHat, GraduationCap, Megaphone, CalendarDays, CreditCard, Truck, Bell, LayoutDashboard,
 } from "lucide-react";
 
 const ICONS = {
@@ -12,6 +13,8 @@ const ICONS = {
   pointer: MousePointerClick, clipboard: ClipboardList, trend: TrendingUp, user: UserRound, wrench: Wrench,
   chat: MessageCircle, cloud: CloudUpload, chart: BarChart3, book: BookOpen, sparkle: Sparkles, shield: ShieldCheck,
   headset: Headset, briefcase: Briefcase, arrow: ArrowRight, check: Check, pin: MapPin, meet: MessagesSquare,
+  store: Store, users: Users, hardhat: HardHat, graduation: GraduationCap, megaphone: Megaphone, calendar: CalendarDays,
+  card: CreditCard, truck: Truck, bell: Bell, dashboard: LayoutDashboard,
 };
 
 export const Icon = ({ name, size = 18, ...rest }) => {

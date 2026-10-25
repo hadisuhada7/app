@@ -101,7 +101,7 @@ const Hero = () => (
   </section>
 );
 
-const Clients = () => (
+export const Clients = () => (
   <section className="section soft clients" data-testid="home-clients">
     <div className="container">
       <SectionHeading center eyebrow="Dipercaya klien" title="Menjadi bagian dari perjalanan digital berbagai bisnis." text="Setiap kerja sama dimulai dari kebutuhan yang berbeda, dengan perhatian yang sama terhadap kualitas hasil dan komunikasi." />

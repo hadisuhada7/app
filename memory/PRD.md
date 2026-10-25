@@ -1,0 +1,31 @@
+# PRD — Clone Green Website Indonesia
+
+## Original problem statement
+"Buatlah website dengan clone dari webiste https://greenwebsite.co.id/ berikut DESIGN.md dan PRD.md dan samakan dengan screenshot terlampir sementara untuk Beranda, Tentang Kami, Portofolio. Bisa cek kembali DESIGN.md dan PRD.md dan jika ada improve beri tahu saya. saya ingin sama persis. Note : Screenshoot saya lampirkan bertahap"
+
+## Architecture
+- React (CRA) + React Router 7, framer-motion, lenis (smooth scroll), lucide-react. Pure CSS in App.css (tokens copied from the original site: #1d5f4f, Manrope).
+- Content in /app/frontend/src/data/site.js and portfolio.json (62 projects scraped from greenwebsite.co.id). Images saved locally in /public/uploads/portfolio (webp), /public/clients, /public/assets.
+- Backend not used (static site). WhatsApp 628977430802 is configured in site.js.
+
+## User personas
+- Potential clients looking for website services who contact via WhatsApp.
+- The Green Website owner (wants the clone to match the original exactly).
+
+## Core requirements
+- Beranda, Tentang Kami, Portofolio matching the screenshots + original content.
+- Sticky header with a mega menu, white footer, floating WhatsApp button, works at 390px, respects reduced motion.
+
+## Implemented (2026-10-25)
+- Beranda: hero with masked lines + HTML 3D-tilt dashboard, client marquee, about visual, 8 services, 8 portfolio items, approach, steps, after sales, articles, FAQ accordion, CTA.
+- Tentang Kami: hero, identity panel, profile, focus, steps, principles, legal info, offices, support, CTA.
+- Portofolio: hero + stats, approach, tabs (37 LP / 17 CP / 8 Toko Online / Portal Berita empty), solutions, CTA.
+- Temporary pages: /layanan/:slug (8), /artikel, /artikel/:slug, /kontak, /member (display only), /kebijakan-privasi, /syarat-ketentuan.
+
+## Backlog
+- P0: Match Layanan, Artikel, Kontak, Login Member to their screenshots (phase 2).
+- P1: "Pengalaman Klien" testimonial section; real member login.
+- P2: Admin panel for portfolio/articles; Lighthouse ≥ 90 (sitemap, robots).
+
+## Next tasks
+- Wait for the next screenshots from the user and match those pages.

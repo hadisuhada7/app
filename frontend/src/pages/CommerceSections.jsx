@@ -1,4 +1,4 @@
-import { Check, QrCode, Landmark, UserRound, ShoppingCart, CircleCheck, MapPin } from "lucide-react";
+import { QrCode, Landmark, UserRound, ShoppingCart, CircleCheck, MapPin } from "lucide-react";
 import { Reveal, Eyebrow } from "@/components/Common";
 import { COURIERS, AUTO_COURIERS, BANKS } from "@/data/services";
 
@@ -19,7 +19,7 @@ const Raja = () => (
           <img src="/assets/logos/rajaongkir.svg" alt="RajaOngkir" />
           <div><small>PARTNER INTEGRASI</small><strong>RajaOngkir</strong><span>Cek ongkir · Shipping Delivery · Payment API</span></div>
         </div>
-        <div className="raja-points">{["Ongkir realtime", "Fulfillment terintegrasi", "Tracking lebih rapi"].map((t) => <span key={t}><Check size={13} /> {t}</span>)}</div>
+        <div className="raja-points">{["Ongkir realtime", "Fulfillment terintegrasi", "Tracking lebih rapi"].map((t) => <span key={t}><CircleCheck size={14} /> {t}</span>)}</div>
       </Reveal>
       <Reveal delay={0.1} className="raja-panel">
         <div className="raja-panel-head"><div><small>SHIPPING INTEGRATION</small><strong>Ekspedisi yang didukung</strong></div><span className="raja-live"><i /> Connected</span></div>

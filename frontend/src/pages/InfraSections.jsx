@@ -102,13 +102,13 @@ export const Options = ({ b }) => (
       <Reveal className="section-heading center"><Eyebrow>{b.eyebrow}</Eyebrow><h2>{b.title}</h2><p>{b.text}</p></Reveal>
       <div className={`plans ${b.three ? "" : "two"}`}>
         {b.items.map((o, i) => (
-          <Reveal key={o.name} className={`plan option ${o.featured ? "featured" : ""}`} delay={i * 0.08}>
+          <div key={o.name} className={`plan option static-option-icon ${o.featured ? "featured" : ""}`}>
             <span className="icon-box"><Icon name={o.icon} size={17} /></span>
             <h3>{o.name}</h3>
             <p className="plan-desc">{o.desc}</p>
             {o.list && <ul className="plan-list">{o.list.map((l) => <li key={l}><Check size={13} />{l}</li>)}</ul>}
             <Btn to={o.to} variant={o.featured ? "white" : "light"}>{o.label}</Btn>
-          </Reveal>
+          </div>
         ))}
       </div>
       {b.note && <p className="fine-note center">{b.note}</p>}

@@ -6,7 +6,7 @@ import { SERVICES, WA, PORTFOLIO_TABS } from "@/data/site";
 import PORTFOLIO from "@/data/portfolio.json";
 
 const Stat = ({ n, label }) => (
-  <div className="stat"><strong>{n}</strong><small>{label}</small></div>
+  <div className="stat bordered"><strong>{n}</strong><small>{label}</small></div>
 );
 
 const ProjectTabs = () => {
@@ -56,7 +56,7 @@ export default function Portfolio() {
               <p>Setiap bisnis memiliki karakter, tujuan, dan kebutuhan yang berbeda. Portofolio ini memperlihatkan bagaimana kami menerjemahkan kebutuhan tersebut menjadi website dan solusi digital yang terarah.</p>
               <div className="hero-buttons">
                 <Btn to="/portofolio#proyek-pilihan" testid="portfolio-hero-explore">Jelajahi Proyek</Btn>
-                <Btn to={WA.proyek} variant="link-plain" testid="portfolio-hero-discuss">Diskusikan Proyek</Btn>
+                <Btn to={WA.proyek} variant="light" testid="portfolio-hero-discuss">Diskusikan Proyek</Btn>
               </div>
             </Reveal>
           </div>

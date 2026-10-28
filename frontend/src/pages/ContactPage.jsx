@@ -23,7 +23,7 @@ const Hero = () => (
         <p className="hero-lead">Ceritakan website, sistem, atau kebutuhan digital yang ingin Anda bangun. Tim Green Website Indonesia akan membantu memahami kebutuhannya terlebih dahulu sebelum menentukan arah pengerjaan yang paling sesuai.</p>
         <div className="hero-buttons">
           <a href={WA.chat} target="_blank" rel="noopener noreferrer" className="btn primary" data-testid="contact-hero-wa"><WaGlyph /> Chat WhatsApp <ArrowUpRight size={15} /></a>
-          <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn link-plain" data-testid="contact-hero-map"><MapPin size={15} /> Lihat Lokasi Jakarta</a>
+          <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn light" data-testid="contact-hero-map"><MapPin size={15} /> Lihat Lokasi Jakarta</a>
         </div>
         <div className="hero-points">{["Konsultasi kebutuhan", "8 layanan digital", "PT Green Website Indonesia"].map((t) => <span key={t}><CheckCircle2 size={14} /> {t}</span>)}</div>
       </Reveal>

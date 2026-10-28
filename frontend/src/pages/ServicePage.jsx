@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, ShoppingBag, ArrowRight } from "lucide-react";
+import { Check, CheckCircle2, ShoppingBag, ArrowRight } from "lucide-react";
 import { useSeo } from "@/components/Layout";
 import { Reveal, Eyebrow, Btn, BtnLink, Icon, FeatureCard, PortfolioCard, CtaBlock } from "@/components/Common";
 import { Clients } from "@/pages/Home";
@@ -71,9 +71,9 @@ const Hero = ({ d }) => (
           <p className="hero-lead">{d.text}</p>
           <div className="hero-buttons">
             <Btn to={d.wa} testid="service-hero-consult">{d.ctaLabel}</Btn>
-            <Btn to={d.secondary ? `${window.location.pathname}${d.secondary.to}` : "/portofolio"} variant="link-plain" testid="service-hero-secondary">{d.secondary?.label ?? "Lihat Portofolio"}</Btn>
+            <Btn to={d.secondary ? `${window.location.pathname}${d.secondary.to}` : "/portofolio"} variant="light" testid="service-hero-secondary">{d.secondary?.label ?? "Lihat Portofolio"}</Btn>
           </div>
-          <div className="hero-points">{d.badges.map((b) => <span key={b}><Check size={15} /> {b}</span>)}</div>
+          <div className="hero-points">{d.badges.map((b) => <span key={b}><CheckCircle2 size={14} /> {b}</span>)}</div>
         </Reveal>
       </div>
       {d.phoneVisual ? <PhoneMock /> : d.serverVisual ? <ServerMock /> : d.appVisual ? <AppMock /> : d.shopVisual ? <ShopMock /> : <VisualMock v={d.visual} />}

@@ -59,8 +59,8 @@ export default function MemberPage() {
             <h1>Member Area Green Website Segera Hadir.</h1>
             <p className="hero-lead">Kami sedang menyiapkan Member Area Green Website Indonesia untuk memberikan akses layanan dan informasi website dalam satu tempat.</p>
             <div className="member-actions">
-              <Link to="/" className="btn link-plain dark" data-testid="member-back-home">Kembali ke Beranda</Link>
-              <a href={wa("Halo Green Website, saya ingin bertanya tentang Member Area.")} target="_blank" rel="noopener noreferrer" className="btn link-plain dark" data-testid="member-contact-team">Hubungi Tim Kami</a>
+              <Link to="/" className="btn light" data-testid="member-back-home">Kembali ke Beranda</Link>
+              <a href={wa("Halo Green Website, saya ingin bertanya tentang Member Area.")} target="_blank" rel="noopener noreferrer" className="btn primary" data-testid="member-contact-team">Hubungi Tim Kami</a>
             </div>
             <div className="member-meta"><span>Peluncuran 1 November 2026</span><span>Dipersiapkan untuk Klien Green Website</span></div>
           </Reveal>

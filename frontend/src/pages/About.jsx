@@ -28,7 +28,7 @@ export default function About() {
               <p>PT Green Website Indonesia adalah perusahaan pengembangan website dan solusi digital untuk bisnis, perusahaan, dan lembaga. Kami menggabungkan perencanaan, desain, pengembangan, serta infrastruktur dalam proses kerja yang terstruktur.</p>
               <div className="hero-buttons">
                 <Btn to="/tentang-kami#profil" testid="about-hero-profil">Profil Perusahaan</Btn>
-                <Btn to="/tentang-kami#identitas" variant="link-plain" testid="about-hero-legal">Legalitas &amp; Kantor</Btn>
+                <Btn to="/tentang-kami#identitas" variant="light" testid="about-hero-legal">Legalitas &amp; Kantor</Btn>
               </div>
             </Reveal>
           </div>

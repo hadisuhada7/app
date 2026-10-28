@@ -33,7 +33,6 @@ const MegaMenu = ({ onPick }) => (
         <Link key={s.slug} to={`/layanan/${s.slug}`} className="mega-item" onClick={onPick} data-testid={`mega-${s.slug}`}>
           <span className="icon-box"><Icon name={s.icon} size={16} /></span>
           <span className="mega-text"><strong>{s.title}</strong><small>{s.short}</small></span>
-          <ArrowRight size={13} className="mega-arrow" />
         </Link>
       ))}
     </div>

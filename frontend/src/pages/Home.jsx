@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { Check, Globe, ShieldCheck, Wifi, Monitor, Rocket, ArrowRight } from "lucide-react";
+import { CheckCircle2, Globe, ShieldCheck, Wifi, Monitor, Rocket, ArrowRight } from "lucide-react";
 import { useSeo } from "@/components/Layout";
 import { Reveal, Eyebrow, SectionHeading, Btn, BtnLink, ServiceGrid, Steps, FeatureCard, CtaBlock, VisualCard, IconBox } from "@/components/Common";
 import { SERVICES, CLIENTS, HOME_PORTFOLIO, APPROACH, HOME_STEPS, AFTER_SALES, ARTICLES, WA } from "@/data/site";
@@ -92,7 +92,7 @@ const Hero = () => (
             <Btn to="/portofolio" variant="light" arrow={false} testid="hero-cta-portofolio">Lihat Portofolio</Btn>
           </div>
           <div className="hero-points">
-            {["Desain custom", "Mobile responsive", "Dukungan setelah online"].map((t) => <span key={t}><Check size={15} /> {t}</span>)}
+            {["Desain custom", "Mobile responsive", "Dukungan setelah online"].map((t) => <span key={t}><CheckCircle2 size={14} /> {t}</span>)}
           </div>
         </Reveal>
       </div>

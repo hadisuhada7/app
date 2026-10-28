@@ -29,6 +29,7 @@
 - Article detail pages (/artikel/:slug) rebuilt with full original text: centered hero (category, title, lead, author + 1 Oktober 2026), visual banner, sections, related articles (2026-10-25).
 - Website Custom, Portal Berita, Web Application pages rebuilt from originals (data in src/data/services2.js, block-based rendering in ServicePage.jsx, web-app specific sections in pages/AppSections.jsx) (2026-10-25). Remaining basic: mobile-app, managed-hosting-server.
 - Mobile App and Managed Hosting & Server pages rebuilt from originals (data in src/data/services3.js, generic split/panel/options blocks + phone/server hero mocks in pages/InfraSections.jsx) (2026-10-25). All 8 service pages now match the original site.
+- Refinements to match original (2026-10-28): mega menu (eyebrow, 42px icons, arrows), header scroll-progress line, closing CTA (gradient card, stacked buttons, soft band) on all pages, Struktur Website bordered cells with arrows, Commerce Signature member dashboard with icons, Workflow cards with icons + numbers; service icons updated site-wide.
 
 ## Backlog
 - P0: Match Layanan, Artikel, Kontak, Login Member to their screenshots (phase 2).

@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Lenis from "lenis";
-import { ChevronDown, Menu, X, Phone, Mail, MapPin, UserRound, ArrowUpRight } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, UserRound, ArrowUpRight, ArrowRight, ArrowDown } from "lucide-react";
 import { SERVICES, CONTACT, WA } from "@/data/site";
 import { Icon } from "@/components/Common";
 
@@ -25,14 +25,15 @@ const NAV = [
 const MegaMenu = ({ onPick }) => (
   <div className="mega" data-testid="mega-menu">
     <div className="mega-head">
-      <strong>Layanan Green Website</strong>
-      <span>Pilih solusi sesuai kebutuhan Anda.</span>
+      <small>LAYANAN GREEN WEBSITE</small>
+      <strong>Pilih solusi sesuai kebutuhan Anda.</strong>
     </div>
     <div className="mega-grid">
       {SERVICES.map((s) => (
         <Link key={s.slug} to={`/layanan/${s.slug}`} className="mega-item" onClick={onPick} data-testid={`mega-${s.slug}`}>
-          <span className="icon-box sm"><Icon name={s.icon} size={15} /></span>
-          <span><strong>{s.title}</strong><small>{s.short}</small></span>
+          <span className="icon-box"><Icon name={s.icon} size={16} /></span>
+          <span className="mega-text"><strong>{s.title}</strong><small>{s.short}</small></span>
+          <ArrowRight size={13} className="mega-arrow" />
         </Link>
       ))}
     </div>
@@ -43,10 +44,15 @@ const Header = () => {
   const [mega, setMega] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
   const loc = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -66,7 +72,7 @@ const Header = () => {
             n.mega ? (
               <div key="mega" className="nav-mega" onMouseEnter={() => setMega(true)} onMouseLeave={() => setMega(false)}>
                 <button type="button" className={`nav-btn ${loc.pathname.startsWith("/layanan") ? "active" : ""}`} aria-expanded={mega} onClick={() => setMega((v) => !v)} data-testid="nav-layanan">
-                  Layanan <ChevronDown size={14} className={mega ? "rot" : ""} />
+                  Layanan {mega ? <ArrowDown size={13} /> : <ArrowRight size={13} />}
                 </button>
                 {mega && <MegaMenu onPick={() => setMega(false)} />}
               </div>
@@ -78,6 +84,7 @@ const Header = () => {
         <Link to="/member" className="btn primary header-cta" data-testid="header-login-member"><UserRound size={15} /> Login Member <ArrowUpRight size={14} /></Link>
         <button type="button" className="burger" aria-label="Buka menu" onClick={() => setDrawer(true)} data-testid="mobile-menu-open"><Menu size={22} /></button>
       </div>
+      <span className="scroll-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
       {drawer && createPortal(
         <div className="drawer" data-testid="mobile-drawer" data-lenis-prevent>
           <div className="drawer-top">

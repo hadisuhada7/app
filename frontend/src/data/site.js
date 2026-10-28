@@ -22,13 +22,13 @@ export const MAPS_EMBED = "https://www.google.com/maps?q=Menara%20Cakrawala%2C%2
 
 export const SERVICES = [
   {
-    slug: "company-profile", icon: "building", title: "Website Company Profile", short: "Profil bisnis & perusahaan",
+    slug: "company-profile", icon: "briefcase", title: "Website Company Profile", short: "Profil bisnis & perusahaan",
     home: "Hadirkan profil perusahaan, layanan, dan pengalaman dalam website yang terstruktur. Bantu calon pelanggan dan mitra mengenal bisnis Anda secara profesional.",
     about: "Website perusahaan untuk menyampaikan profil, layanan, keunggulan, dan informasi bisnis secara profesional.",
     portfolio: "Untuk perusahaan dan lembaga yang membutuhkan profil, layanan, legalitas, kredibilitas, serta informasi kontak dalam struktur yang profesional.",
   },
   {
-    slug: "landing-page", icon: "layout", title: "Website Landing Page", short: "Halaman fokus promosi",
+    slug: "landing-page", icon: "monitor", title: "Website Landing Page", short: "Halaman fokus promosi",
     home: "Sampaikan penawaran produk, jasa, atau kampanye melalui halaman yang berfokus pada satu tujuan, dengan informasi dan langkah berikutnya yang jelas.",
     about: "Halaman terarah untuk kampanye, produk, layanan, atau kebutuhan komunikasi dengan fokus yang spesifik.",
     portfolio: "Untuk produk, jasa, promosi, atau kampanye yang membutuhkan halaman terarah dengan fokus komunikasi dan tujuan yang jelas.",
@@ -46,7 +46,7 @@ export const SERVICES = [
     portfolio: "Untuk kebutuhan website dengan desain, struktur, integrasi, atau fungsi khusus yang disesuaikan dengan proses bisnis.",
   },
   {
-    slug: "portal-berita", icon: "globe", title: "Website Berita", short: "Portal publikasi & redaksi",
+    slug: "portal-berita", icon: "chat", title: "Website Berita", short: "Portal publikasi & redaksi",
     home: "Dirancang untuk media, organisasi dan portal informasi yang membutuhkan struktur artikel, kategori, pencarian dan pengelolaan konten yang jelas.",
     about: "Platform publikasi untuk mengelola kategori, artikel, redaksi, dan informasi secara terstruktur.",
     portfolio: "Untuk media dan organisasi yang membutuhkan portal publikasi dengan kategori, artikel, redaksi, dan pengelolaan konten.",
@@ -64,7 +64,7 @@ export const SERVICES = [
     portfolio: "Untuk aplikasi mobile yang dirancang sesuai kebutuhan bisnis, layanan, pengguna, serta fungsi digital yang ingin dikembangkan.",
   },
   {
-    slug: "managed-hosting-server", icon: "server", title: "Managed Hosting & Server", short: "Infrastruktur yang dikelola",
+    slug: "managed-hosting-server", icon: "cloud", title: "Managed Hosting & Server", short: "Infrastruktur yang dikelola",
     home: "Penyiapan dan pengelolaan infrastruktur untuk membantu deployment, keamanan dasar, backup dan pemantauan layanan berjalan lebih terorganisir.",
     about: "Infrastruktur untuk mendukung website dan aplikasi dengan pengelolaan teknis yang lebih terarah.",
     portfolio: "Untuk kebutuhan hosting dan server yang dikelola agar infrastruktur website atau sistem tetap terarah dan mudah dipantau.",

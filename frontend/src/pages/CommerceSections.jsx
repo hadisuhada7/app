@@ -1,4 +1,4 @@
-import { Check, QrCode, Landmark, UserRound } from "lucide-react";
+import { Check, QrCode, Landmark, UserRound, ShoppingCart, CircleCheck, MapPin } from "lucide-react";
 import { Reveal, Eyebrow } from "@/components/Common";
 import { COURIERS, AUTO_COURIERS, BANKS } from "@/data/services";
 
@@ -79,10 +79,10 @@ export const MemberSection = () => (
         <p>Paket Signature menambahkan customer account system agar pelanggan dapat login, menyimpan data, melihat riwayat transaksi, dan mengikuti status pesanan dari akun mereka sendiri.</p>
       </Reveal>
       <Reveal delay={0.1} className="member-mock">
-        <div className="member-mock-head"><span className="icon-box sm"><UserRound size={14} /></span><strong>Member Dashboard</strong></div>
+        <div className="member-mock-head"><strong>Member Dashboard</strong><span className="icon-box"><UserRound size={16} /></span></div>
         <div className="member-mock-grid">
-          {[["Riwayat Pesanan", "Daftar transaksi sebelumnya."], ["Status Pesanan", "Progres order lebih mudah dipantau."], ["Alamat Tersimpan", "Mempercepat checkout berikutnya."], ["Profil Pelanggan", "Data akun dalam satu area member."]].map(([t, s]) => (
-            <div key={t}><i /><strong>{t}</strong><small>{s}</small></div>
+          {[[ShoppingCart, "Riwayat Pesanan", "Daftar transaksi sebelumnya."], [CircleCheck, "Status Pesanan", "Progres order lebih mudah dipantau."], [MapPin, "Alamat Tersimpan", "Mempercepat checkout berikutnya."], [UserRound, "Profil Pelanggan", "Data akun dalam satu area member."]].map(([I, t, s]) => (
+            <div key={t}><I size={16} strokeWidth={1.8} /><strong>{t}</strong><small>{s}</small></div>
           ))}
         </div>
       </Reveal>

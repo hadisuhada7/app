@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ShieldCheck, Users, Database, GitBranch, BarChart3, KeyRound, Lock, HardDriveDownload, ArrowRight } from "lucide-react";
-import { Reveal, Eyebrow, Btn } from "@/components/Common";
+import { Reveal, Eyebrow, Btn, Icon } from "@/components/Common";
 
 const BARS = [38, 52, 44, 66, 58, 74, 62, 86, 70, 92, 80, 96];
 
@@ -69,21 +69,24 @@ export const AppAbout = () => (
 );
 
 export const Workflow = ({ b }) => (
-  <section className="section" data-testid="service-workflow">
+  <section className="section soft" data-testid="service-workflow">
     <div className="container">
       <Reveal className="section-heading center"><Eyebrow>{b.eyebrow}</Eyebrow><h2>{b.title}</h2><p>{b.text}</p></Reveal>
       <div className="wf-row" style={{ "--wf": b.items.length }}>
-        {b.items.map(([t, s], i) => (
+        {b.items.map(([t, s, ic], i) => (
           <Reveal className="wf-item" key={t} delay={i * 0.06}>
-            <span>{String(i + 1).padStart(2, "0")}</span>
+            <span className="wf-num">{String(i + 1).padStart(2, "0")}</span>
+            <span className="wf-icon"><Icon name={ic ?? WF_ICONS[i % WF_ICONS.length]} size={20} /></span>
             <strong>{t}</strong><small>{s}</small>
-            {i < b.items.length - 1 && !b.noArrow && <ArrowRight size={14} className="wf-arrow" />}
+            {i < b.items.length - 1 && !b.noArrow && <ArrowRight size={12} className="wf-arrow" />}
           </Reveal>
         ))}
       </div>
     </div>
   </section>
 );
+
+const WF_ICONS = ["layers", "check", "code", "user", "check", "chart"];
 
 const MATRIX = [
   ["Dashboard", "✓", "✓", "✓", "✓"],
@@ -94,7 +97,7 @@ const MATRIX = [
 ];
 
 export const Roles = () => (
-  <section className="section soft" data-testid="service-roles">
+  <section className="section" data-testid="service-roles">
     <div className="container roles-grid">
       <Reveal>
         <Eyebrow>Role &amp; Hak Akses</Eyebrow>

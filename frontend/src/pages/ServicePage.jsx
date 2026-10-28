@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, ShoppingBag } from "lucide-react";
+import { Check, ShoppingBag, ArrowRight } from "lucide-react";
 import { useSeo } from "@/components/Layout";
 import { Reveal, Eyebrow, Btn, BtnLink, Icon, FeatureCard, PortfolioCard, CtaBlock } from "@/components/Common";
 import { Clients } from "@/pages/Home";
@@ -99,14 +99,15 @@ const Flow = ({ f }) => (
   <section className="section" data-testid="service-flow">
     <div className="container">
       <Head {...f} />
-      <div className="svc-flow" style={{ "--n": f.items.length }}>
+      <Reveal className="svc-flow" style={{ "--n": f.items.length }}>
         {f.items.map((t, i) => (
-          <Reveal className="svc-flow-item" key={t} delay={i * 0.06}>
+          <div className="svc-flow-item" key={t}>
             <span>{String(i + 1).padStart(2, "0")}</span>
             <strong>{t}</strong>
-          </Reveal>
+            {i < f.items.length - 1 && <ArrowRight size={11} className="svc-flow-arrow" />}
+          </div>
         ))}
-      </div>
+      </Reveal>
     </div>
   </section>
 );

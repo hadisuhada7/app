@@ -6,7 +6,7 @@ import {
   BarChart3, BookOpen, Sparkles, ShieldCheck, Headset, Briefcase, ArrowRight, Check, MapPin, MessagesSquare,
   Store, Users, HardHat, GraduationCap, Megaphone, CalendarDays, CreditCard, Truck, Bell, LayoutDashboard,
   Search, FileText, Calculator, Plug, Newspaper, Tags, Image, Share2, Lock, Database, GitBranch, Package, Ticket,
-  Wallet, KeyRound, Bug, Gauge, PenLine, Flame,
+  Wallet, KeyRound, Bug, Gauge, PenLine, Flame, Monitor,
 } from "lucide-react";
 
 const ICONS = {
@@ -19,7 +19,7 @@ const ICONS = {
   card: CreditCard, truck: Truck, bell: Bell, dashboard: LayoutDashboard,
   search: Search, file: FileText, calculator: Calculator, plug: Plug, newspaper: Newspaper, tag: Tags, image: Image,
   share: Share2, lock: Lock, database: Database, branch: GitBranch, box: Package, ticket: Ticket, wallet: Wallet,
-  key: KeyRound, bug: Bug, gauge: Gauge, pen: PenLine, flame: Flame,
+  key: KeyRound, bug: Bug, gauge: Gauge, pen: PenLine, flame: Flame, monitor: Monitor,
 };
 
 export const Icon = ({ name, size = 18, ...rest }) => {

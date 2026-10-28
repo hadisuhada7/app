@@ -1017,13 +1017,16 @@ p { margin-bottom: 14px; }
 .mega-head { padding: 0 12px 18px; margin-bottom: 10px; }
 .mega-head small { font-size: 9.5px; font-weight: 800; letter-spacing: 0.18em; color: var(--green); margin-bottom: 6px; }
 .mega-head strong { font-size: 14.5px; letter-spacing: -0.02em; }
-.mega-grid { gap: 2px 8px; }
-.mega-item { padding: 14px 12px; gap: 14px; border-radius: 14px; }
-.mega-item .icon-box { width: 42px; height: 42px; border-radius: 12px; }
+.mega-grid { gap: 8px 16px; padding: 4px 2px 0; }
+.mega-item { padding: 15px 14px; gap: 14px; border-radius: 16px; border: 1px solid transparent; transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s; }
+.mega-item:hover, .mega-item:focus-visible { background: #f5f9f7; border-color: var(--line); box-shadow: 0 8px 22px rgba(27, 67, 53, 0.06); }
+.mega-item strong { font-size: 12.5px; margin-bottom: 2px; }
+.mega-item small { font-size: 10.5px; }
+.mega-item .icon-box { width: 40px; height: 40px; border-radius: 12px; transition: background-color 0.25s, color 0.25s, border-color 0.25s; }
 .mega-text { flex: 1; min-width: 0; }
 .mega-arrow { color: #9aaba3; flex: none; transition: transform 0.25s var(--ease), color 0.2s; }
 .mega-item:hover .mega-arrow { transform: translateX(3px); color: var(--green); }
-.mega-item:hover .icon-box { background: var(--green); color: #fff; }
+.mega-item:hover .icon-box, .mega-item:focus-visible .icon-box { background: var(--green); border-color: var(--green); color: #fff; }
 
 .cta-section { background: var(--mist); padding: 100px 0; border-top: 1px solid var(--line); }
 .cta { background: linear-gradient(120deg, #1d5f4f 0%, #236b58 100%); padding: 60px 48px 58px; gap: 40px; }
@@ -1056,9 +1059,10 @@ p { margin-bottom: 14px; }
 .wf-arrow { right: -22px; color: #9aaba3; background: transparent; }
 
 @media (max-width: 1100px) {
-  .svc-flow { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .svc-flow { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 0; }
   .svc-flow-item:nth-child(4n + 1) { border-left: 0; }
-  .svc-flow-item { border-bottom: 1px solid var(--line); }
+  .svc-flow-item { border-bottom: 1px solid var(--line); margin-bottom: -1px; }
+  .svc-flow-item:nth-child(4n) .svc-flow-arrow { display: none; }
   .wf-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
   .cta-buttons { margin-right: 0; }
 }

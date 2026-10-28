@@ -1,3 +1,5 @@
+import { CircleCheck, ArrowRight as Arrow } from "lucide-react";
+
 import { motion } from "framer-motion";
 import { Check, Bell, ShieldCheck } from "lucide-react";
 import { Reveal, Eyebrow, Btn, Icon } from "@/components/Common";
@@ -113,3 +115,67 @@ export const Options = ({ b }) => (
     </div>
   </section>
 );
+
+const Node = ([i, t, s], idx, arr) => [
+  <div className="node" key={`n-${idx}`}><Icon name={i} size={17} /><strong>{t}</strong><small>{s}</small></div>,
+  idx < arr.length - 1 ? <span className="node-link" key={`l-${idx}`}><Arrow size={11} /></span> : null,
+];
+
+export const CardSplit = ({ b }) => (
+  <section className="section" data-testid="service-cardsplit">
+    <div className="container split">
+      <Reveal className="split-copy">
+        <Eyebrow>{b.eyebrow}</Eyebrow>
+        <h2>{b.title}</h2>
+        <p>{b.text}</p>
+        <div className="split-actions"><Btn to="/kontak" variant="light" testid="cardsplit-cta">{b.button}</Btn></div>
+      </Reveal>
+      <div className="cardsplit-grid">
+        {b.points.map(([t, p], i) => (
+          <Reveal className="card cardsplit-item" key={t} delay={i * 0.07}>
+            <span className="cardsplit-icon"><Icon name={b.icons[i]} size={22} /></span>
+            <h3>{t}</h3><p>{p}</p>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export const LayersBlock = ({ b }) => (
+  <section className="section raja" data-testid="service-layers">
+    <div className="container">
+      <Reveal className="section-heading">
+        <span className="eyebrow light">{b.eyebrow}</span>
+        <h2>{b.title}</h2>
+        <p>{b.text}</p>
+      </Reveal>
+      <div className="layers-grid">
+        <Reveal className="layers-flow">{b.nodes.map(Node)}</Reveal>
+        <div className="layers-list">
+          {b.items.map(([i, t, s], idx) => (
+            <Reveal className="layer-card" key={t} delay={idx * 0.08}><Icon name={i} size={17} /><div><strong>{t}</strong><small>{s}</small></div></Reveal>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export const Connected = ({ b }) => (
+  <section className="section soft" data-testid="service-connected">
+    <div className="container split">
+      <Reveal className="split-copy">
+        <Eyebrow>{b.eyebrow}</Eyebrow>
+        <h2>{b.title}</h2>
+        <p>{b.text}</p>
+        <ul className="circle-checks">{b.checks.map((t) => <li key={t}><CircleCheck size={16} />{t}</li>)}</ul>
+      </Reveal>
+      <Reveal delay={0.1} className="connected-card" data-testid="connected-diagram">
+        <div className="connected-flow">{b.items.map(Node)}</div>
+        <div className="connected-chips">{b.chips.map((c) => <span key={c}>{c}</span>)}</div>
+      </Reveal>
+    </div>
+  </section>
+);
+

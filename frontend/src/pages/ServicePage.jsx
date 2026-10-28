@@ -7,7 +7,7 @@ import { FaqBlock } from "@/pages/HomeFaq";
 import { TECH, SUPPORT_ITEMS } from "@/data/services";
 import { CommerceSections, MemberSection } from "@/pages/CommerceSections";
 import { AppMock, AppAbout, Workflow, Roles, Security } from "@/pages/AppSections";
-import { PhoneMock, ServerMock, Split, Panel, Options } from "@/pages/InfraSections";
+import { PhoneMock, ServerMock, Split, Panel, Options, CardSplit, LayersBlock, Connected } from "@/pages/InfraSections";
 import PORTFOLIO from "@/data/portfolio.json";
 
 const Head = ({ eyebrow, title, text, center }) => (
@@ -274,6 +274,9 @@ const renderBlock = (b, i, d) => {
     case "split": return <Split key={i} b={b} />;
     case "panel": return <Panel key={i} b={b} />;
     case "options": return <Options key={i} b={b} />;
+    case "cardsplit": return <CardSplit key={i} b={b} />;
+    case "layers": return <LayersBlock key={i} b={b} />;
+    case "connected": return <Connected key={i} b={b} />;
     default: return null;
   }
 };

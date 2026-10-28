@@ -69,7 +69,7 @@ export const AppAbout = () => (
 );
 
 export const Workflow = ({ b }) => (
-  <section className="section soft" data-testid="service-workflow">
+  <section className={`section ${b.white ? "" : "soft"}`} data-testid="service-workflow">
     <div className="container">
       <Reveal className="section-heading center"><Eyebrow>{b.eyebrow}</Eyebrow><h2>{b.title}</h2><p>{b.text}</p></Reveal>
       <div className="wf-row" style={{ "--wf": b.items.length }}>

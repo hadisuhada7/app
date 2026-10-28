@@ -1080,3 +1080,58 @@ p { margin-bottom: 14px; }
   .svc-flow-arrow { display: none; }
   .wf-row { grid-template-columns: 1fr; }
 }
+
+/* Infra blocks */
+.node-wrap { display: flex; align-items: center; flex: 1; min-width: 0; }
+.node { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 18px 8px 16px; border-radius: 14px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14); color: #fff; }
+.node svg { color: #d5e6dc; margin-bottom: 6px; }
+.node strong { font-size: 12px; line-height: 1.3; white-space: nowrap; }
+.node small { font-size: 9.5px; color: #9fbfb0; line-height: 1.3; white-space: nowrap; }
+.layers-flow .node-link { align-self: flex-start; margin-top: 40px; }
+.node-link { flex: none; width: 38px; align-self: center; display: grid; place-items: center; color: #9fbfb0; position: relative; }
+.layers-grid { display: grid; grid-template-columns: 1.65fr 1fr; gap: 30px; align-items: stretch; }
+.layers-flow { display: flex; align-items: flex-start; padding: 28px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.14); background: rgba(255, 255, 255, 0.03); min-height: 234px; }
+.layers-list { display: flex; flex-direction: column; gap: 12px; }
+.layer-card { flex: 1; display: flex; gap: 16px; align-items: center; padding: 18px 20px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.14); background: rgba(255, 255, 255, 0.03); color: #fff; transition: background-color 0.25s; }
+.layer-card:hover { background: rgba(255, 255, 255, 0.07); }
+.layer-card svg { color: #d5e6dc; flex: none; }
+.layer-card strong { display: block; font-size: 12.5px; }
+.layer-card small { font-size: 10.5px; color: #b9d4c7; }
+.raja .section-heading p { color: #cfe2d8; font-size: 14px; }
+
+.cardsplit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cardsplit-item { padding: 26px 24px; border-radius: 22px; }
+.cardsplit-icon { display: block; color: var(--green); margin-bottom: 18px; transition: transform 0.35s var(--ease); }
+.cardsplit-item:hover .cardsplit-icon { transform: scale(1.12) rotate(-6deg); }
+.cardsplit-item h3 { font-size: 17px; letter-spacing: -0.03em; }
+.cardsplit-item p { font-size: 11.5px; line-height: 1.75; margin: 0; }
+
+.circle-checks { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-direction: column; gap: 14px; }
+.circle-checks li { display: flex; gap: 12px; font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.7; }
+.circle-checks svg { color: var(--green); flex: none; margin-top: 3px; }
+.connected-card { background: var(--green-deep); border-radius: 28px; padding: 30px 24px 28px; box-shadow: 0 30px 70px rgba(21, 58, 49, 0.22); }
+.connected-flow { display: flex; align-items: center; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+.connected-flow .node-link { width: 34px; height: 1px; background: rgba(159, 191, 176, 0.5); }
+.connected-flow .node-link svg { position: absolute; right: -4px; top: -5px; }
+.connected-flow .node { padding: 22px 6px 18px; }
+.connected-flow .node small { font-size: 9px; }
+.connected-chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding-top: 18px; }
+.connected-chips span { font-size: 10px; font-weight: 700; color: #d5e6dc; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; padding: 6px 12px; }
+
+@media (max-width: 980px) {
+  .layers-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .layers-flow, .connected-flow { flex-direction: column; align-items: stretch; min-height: 0; padding: 18px; }
+  .connected-flow { padding: 0 0 18px; }
+  .node-wrap { flex-direction: column; }
+  .node { width: 100%; flex: none; flex-direction: row; text-align: left; gap: 10px; padding: 14px 16px; }
+  .node svg { margin: 0; }
+  .node strong { flex: 1; }
+  .layers-flow .node-link { margin-top: 0; }
+  .node-link { width: auto; height: 22px; align-self: center; transform: rotate(90deg); }
+  .connected-flow .node-link { width: 1px; height: 22px; transform: none; }
+  .connected-flow .node-link svg { transform: rotate(90deg); right: -5px; top: auto; bottom: -4px; }
+  .cardsplit-grid { grid-template-columns: 1fr; }
+}
+

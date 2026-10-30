@@ -179,7 +179,7 @@ const Footer = () => (
     </div>
     <div className="container footer-bottom">
       <span>© {new Date().getFullYear()} PT. Green Website Indonesia. Seluruh hak cipta dilindungi.</span>
-      <span><Link to="/kebijakan-privasi">Kebijakan Privasi</Link> · <Link to="/syarat-ketentuan">Syarat &amp; Ketentuan</Link></span>
+      <span className="footer-bottom-links"><Link to="/kebijakan-privasi" data-testid="footer-privacy-link">Kebijakan Privasi</Link><span aria-hidden="true">·</span><Link to="/syarat-ketentuan" data-testid="footer-terms-link">Syarat &amp; Ketentuan</Link></span>
     </div>
   </footer>
 );

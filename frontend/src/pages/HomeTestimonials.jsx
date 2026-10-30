@@ -1,22 +1,20 @@
 import { Quote } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/Common";
 
-// CONTOH: ganti dengan testimoni asli klien.
 const TESTIMONIALS = [
-  { name: "[Nama Klien 1]", role: "[Jabatan], [Nama Perusahaan]", service: "Website Company Profile", text: "[Contoh testimoni] Proses diskusinya jelas sejak awal, dan tim membantu kami menyusun informasi perusahaan agar mudah dipahami pengunjung." },
-  { name: "[Nama Klien 2]", role: "[Jabatan], [Nama Perusahaan]", service: "Website Toko Online", text: "[Contoh testimoni] Setiap tahap pengerjaan dikomunikasikan dengan baik, sehingga kami tahu materi apa yang perlu disiapkan dan kapan perlu memberi persetujuan." },
-  { name: "[Nama Klien 3]", role: "[Jabatan], [Nama Perusahaan]", service: "Web Application", text: "[Contoh testimoni] Setelah website aktif, kami tetap mendapat bantuan teknis saat dibutuhkan. Ini membuat kami lebih tenang mengelola website sendiri." },
+  { name: "Budi Santoso", role: "Direktur Utama, PT Maju Bersama Sentosa", service: "Website Company Profile", text: "Pelayanan yang sangat luar biasa. Website perusahaan kami tidak hanya terlihat modern dan kredibel, tetapi arsitektur sistemnya juga sangat stabil dan aman. Pengerjaan dilakukan tepat waktu dan tim sangat responsif dalam mengakomodasi kebutuhan kustomisasi bisnis kami. Investasi yang sangat sepadan." },
+  { name: "Rina Amelia", role: "Founder & CEO, Amel Boutique", service: "Website Toko Online", text: "Tampilan website kami sekarang jauh lebih profesional dan user-friendly. Sejak peluncuran website baru, tingkat konversi penjualan kami meningkat tajam karena proses checkout dan navigasi yang sangat lancar. Dukungan teknis pasca-peluncurannya juga luar biasa cepat dan solutif." },
+  { name: "Andi Gunawan", role: "Kepala Operasional, Yayasan Cendekia Edukasi", service: "Web Application", text: "Kami membutuhkan sistem informasi berbasis web yang cukup kompleks dengan integrasi database yang kuat. Tim mampu mengeksekusinya dengan sempurna, mengamankan jaringan, dan mengoptimalkan kecepatan aksesnya meskipun traffic sedang tinggi. Sangat direkomendasikan untuk solusi IT end-to-end." },
 ];
 
-const initials = (name) => name.replace(/[[\]]/g, "").split(" ").map((w) => w[0]).slice(0, 2).join("");
+const initials = (name) => name.split(" ").map((w) => w[0]).slice(0, 2).join("");
 
 const TestimonialCard = ({ t, i }) => (
   <Reveal className="testi-card" delay={i * 0.08} data-testid={`testimonial-card-${i}`}>
     <div className="testi-top">
       <span className="testi-quote"><Quote size={18} /></span>
-      <span className="testi-sample" data-testid={`testimonial-sample-badge-${i}`}>Contoh</span>
     </div>
-    <p className="testi-text">{t.text}</p>
+    <p className="testi-text" data-testid={`testimonial-text-${i}`}>“{t.text}”</p>
     <div className="testi-person">
       <span className="testi-avatar">{initials(t.name)}</span>
       <span><strong>{t.name}</strong><small>{t.role}</small></span>

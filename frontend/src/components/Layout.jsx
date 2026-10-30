@@ -222,7 +222,7 @@ export default function Layout() {
       <Header />
       <main id="konten"><Outlet /></main>
       <Footer />
-      <a href={WA.chat} className="wa-float" target="_blank" rel="noopener noreferrer" data-testid="floating-whatsapp"><WaIcon /> Chat WhatsApp</a>
+      <a href={WA.chat} className="wa-float" target="_blank" rel="noopener noreferrer" data-testid="floating-whatsapp" aria-label="Chat WhatsApp"><WaIcon /><span className="wa-float-label">Chat WhatsApp</span></a>
     </MotionConfig>
   );
 }

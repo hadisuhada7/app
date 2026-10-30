@@ -5,6 +5,7 @@ import { useSeo } from "@/components/Layout";
 import { Reveal, Eyebrow, SectionHeading, Btn, BtnLink, ServiceGrid, Steps, FeatureCard, CtaBlock, VisualCard, IconBox } from "@/components/Common";
 import { SERVICES, CLIENTS, HOME_PORTFOLIO, APPROACH, HOME_STEPS, AFTER_SALES, ARTICLES, WA } from "@/data/site";
 import { Faq } from "@/pages/HomeFaq";
+import { Testimonials } from "@/pages/HomeTestimonials";
 
 const lineAnim = (i) => ({
   initial: { y: "105%" },
@@ -224,6 +225,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Testimonials />
       <Articles />
       <Faq />
       <CtaBlock eyebrow="Mulai bersama Green Website" title="Mari Bicarakan Website yang Tepat untuk Bisnis Anda." text="Ceritakan bisnis yang Anda jalankan, tujuan yang ingin dicapai, dan kebutuhan website Anda. Kami siap membantu merencanakan langkah berikutnya." testid="home-cta">

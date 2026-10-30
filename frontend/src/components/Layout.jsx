@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Lenis from "lenis";
-import { Menu, X, Phone, Mail, MapPin, UserRound, ArrowUpRight, ArrowRight, ArrowDown } from "lucide-react";
+import { Menu, Phone, Mail, MapPin, UserRound, ArrowUpRight, ArrowRight, ArrowDown, Monitor, Briefcase, Layers, Globe, MessageCircle } from "lucide-react";
 import { SERVICES, CONTACT, WA } from "@/data/site";
 import { Icon } from "@/components/Common";
 
@@ -81,25 +81,67 @@ const Header = () => {
           )}
         </nav>
         <Link to="/member" className="btn primary header-cta" data-testid="header-login-member"><UserRound size={15} /> Login Member <ArrowUpRight size={14} /></Link>
-        <button type="button" className="burger" aria-label="Buka menu" onClick={() => setDrawer(true)} data-testid="mobile-menu-open"><Menu size={22} /></button>
+        <button type="button" className={`burger ${drawer ? "open" : ""}`} aria-label={drawer ? "Tutup menu" : "Buka menu"} aria-expanded={drawer} onClick={() => setDrawer((v) => !v)} data-testid="mobile-menu-open"><Menu size={20} /></button>
       </div>
       <span className="scroll-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
-      {drawer && createPortal(
-        <div className="drawer" data-testid="mobile-drawer" data-lenis-prevent>
-          <div className="drawer-top">
-            <Logo />
-            <button type="button" className="burger" aria-label="Tutup menu" onClick={() => setDrawer(false)} data-testid="mobile-menu-close"><X size={22} /></button>
-          </div>
-          <div className="drawer-links">
-            {NAV.filter((n) => !n.mega).map((n) => <NavLink key={n.to} to={n.to} end={n.end}>{n.label}</NavLink>)}
-            <p className="drawer-sub">Layanan</p>
-            {SERVICES.map((s) => <Link key={s.slug} to={`/layanan/${s.slug}`} className="drawer-service">{s.title}</Link>)}
-          </div>
-          <Link to="/member" className="btn primary full" data-testid="drawer-login-member"><UserRound size={15} /> Login Member</Link>
-        </div>,
-        document.body
-      )}
+      {drawer && createPortal(<MobileNav onClose={() => setDrawer(false)} />, document.body)}
     </header>
+  );
+};
+
+const M_ICONS = { "/": Monitor, "/tentang-kami": Briefcase, "/portofolio": Globe, "/artikel": MessageCircle, "/kontak": Mail };
+
+const MRow = ({ icon: I, label, active, open, trailing, ...rest }) => (
+  <span className={`m-row ${active ? "active" : ""} ${open ? "open" : ""}`} {...rest}>
+    <span className="m-ic"><I size={16} strokeWidth={1.8} /></span>
+    <span className="m-label">{label}</span>
+    {trailing}
+  </span>
+);
+
+const MobileNav = ({ onClose }) => {
+  const { pathname } = useLocation();
+  const [svc, setSvc] = useState(pathname.startsWith("/layanan"));
+  const isActive = (to, end) => (end ? pathname === to : pathname.startsWith(to));
+  useEffect(() => {
+    window.__lenis?.stop();
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => { window.__lenis?.start(); document.body.style.overflow = ""; window.removeEventListener("keydown", onKey); };
+  }, [onClose]);
+  return (
+    <div className="m-nav" data-testid="mobile-drawer">
+      <button type="button" className="m-overlay" aria-label="Tutup menu" onClick={onClose} data-testid="mobile-menu-close" />
+      <nav className="m-panel" aria-label="Navigasi ponsel" data-lenis-prevent>
+        {NAV.map((n) => n.mega ? (
+          <div key="mega" className="m-group">
+            <button type="button" className="m-btn" aria-expanded={svc} onClick={() => setSvc((v) => !v)} data-testid="mobile-nav-layanan">
+              <MRow icon={Layers} label="Layanan" active={svc || pathname.startsWith("/layanan")} open={svc} trailing={svc ? <ArrowDown size={14} className="m-arrow" /> : <ArrowRight size={14} className="m-arrow" />} />
+            </button>
+            {svc && (
+              <div className="m-services" data-testid="mobile-services">
+                <p>Pilih solusi sesuai kebutuhan Anda.</p>
+                {SERVICES.map((s) => (
+                  <Link key={s.slug} to={`/layanan/${s.slug}`} className={`m-service ${pathname === `/layanan/${s.slug}` ? "active" : ""}`} data-testid={`mobile-service-${s.slug}`}>
+                    <span className="icon-box"><Icon name={s.icon} size={15} /></span>
+                    <span className="m-service-text"><strong>{s.title}</strong><small>{s.short}</small></span>
+                    <ArrowRight size={12} className="m-arrow" />
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <Link key={n.to} to={n.to} className="m-link" data-testid={`mobile-nav-${n.label.toLowerCase().replace(/\s/g, "-")}`}>
+            <MRow icon={M_ICONS[n.to]} label={n.label} active={isActive(n.to, n.end)} trailing={<ArrowRight size={14} className="m-arrow" />} />
+          </Link>
+        ))}
+        <Link to="/member" className="m-link m-member" data-testid="drawer-login-member">
+          <MRow icon={UserRound} label="Login Member" trailing={<ArrowUpRight size={14} className="m-arrow" />} />
+        </Link>
+      </nav>
+    </div>
   );
 };
 

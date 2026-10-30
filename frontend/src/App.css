@@ -1008,7 +1008,7 @@ p { margin-bottom: 14px; }
   .tabs { width: 100%; }
   .tab { flex: 1 1 45%; padding: 10px 8px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 36px; padding-top: 22px; padding-bottom: 96px; font-size: 11px; line-height: 1.5; color: var(--muted); }
+  .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; margin: 36px 16px 0; width: auto; padding-left: 0; padding-right: 0; padding-top: 22px; padding-bottom: 96px; font-size: 11px; line-height: 1.5; color: var(--muted); }
   .footer-bottom-links { display: flex; align-items: center; gap: 10px; font-size: 11px; }
   .footer-bottom-links a { color: var(--green); font-weight: 500; }
   .wa-float { right: 14px; bottom: 14px; padding: 0 16px; min-height: 48px; }

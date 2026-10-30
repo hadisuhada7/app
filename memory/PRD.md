@@ -30,6 +30,8 @@
 - Website Custom, Portal Berita, Web Application pages rebuilt from originals (data in src/data/services2.js, block-based rendering in ServicePage.jsx, web-app specific sections in pages/AppSections.jsx) (2026-10-25). Remaining basic: mobile-app, managed-hosting-server.
 - Mobile App and Managed Hosting & Server pages rebuilt from originals (data in src/data/services3.js, generic split/panel/options blocks + phone/server hero mocks in pages/InfraSections.jsx) (2026-10-25). All 8 service pages now match the original site.
 - Refinements to match original (2026-10-28): mega menu (eyebrow, 42px icons, arrows), header scroll-progress line, closing CTA (gradient card, stacked buttons, soft band) on all pages, Struktur Website bordered cells with arrows, Commerce Signature member dashboard with icons, Workflow cards with icons + numbers; service icons updated site-wide.
+- Mobile footer bottom (2026-10-30): inset divider, single-line 11px copyright, green Kebijakan Privasi · Syarat & Ketentuan links below, clearance for WhatsApp button. Known: on tablet/desktop the floating WhatsApp button can cover the right-side footer links when scrolled to the very bottom.
+
 
 ## Backlog
 - P0: Match Layanan, Artikel, Kontak, Login Member to their screenshots (phase 2).
